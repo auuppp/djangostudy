@@ -99,8 +99,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "testcrud.settings")
 STATIC_URL = '/static/'
-TEMPLATE_DIRS = ('D:/testing/python/djangoTestWeb/testcrud/testcrud/templates',
-'D:/testing/python/djangoTestWeb/testcrud/myblog',
-'D:/testing/python/djangoTestWeb/testcrud/books',)
+TEMPLATE_DIRS = ('D:/testing/python/gyp/djangostudy/djangoTestWeb/testcrud/testcrud/templates',
+'D:/testing/python/gyp/djangostudy/djangoTestWeb/testcrud/myblog',
+'D:/testing/python/gyp/djangostudy/djangoTestWeb/testcrud/books',)
 #staticfiles=(path.join(ROOT_PATH,'static'),)
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
