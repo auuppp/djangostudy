@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+<a href="/addpublisher">新增</a>
+    <form action="/search_publisher_by_name/" method="post">
+    {% csrf_token %}
+        <input type="text" name="name">
+        <input type="submit" value="查询">
+    </form>
+{% load myfilters %}
+
+<table>
+{% csrf_token %}
+ <tr>
+                             <td>用户名</td>
+                             <td>地址</td>
+                             <td>城市</td>
+                             <td>省</td>
+                             <td>国家</td>
+                             <td>网址</td>
+                             <td>操作</td>
+                         </tr>
+
+            {% for publisher in publishers %}
+                         <tr>
+                             <td>{{ publisher.name|cut:'0' }}</td>
+                             <td>{{ publisher.address }}</td>
+                             <td>{{ publisher.city }}</td>
+                             <td>{{ publisher.state_province|safe }}</td>
+                             {% autoescape off %}
+                             <td>{{ publisher.country}}</td>
+                             {% endautoescape %}
+                             <td>{{ publisher.website }}</td>
+                             <td><a href="/delpublisher?id={{ publisher.id }}">删除</a>||<a href="/updatepublisher?id={{ publisher.id }}">更新</a></td>
+                         </tr>
+                     {% endfor %}
+
+</table> 
+
+<h1 style="color:red">11111</h1>
+<h1>2222222</h1>
+</body>
+</html>
+

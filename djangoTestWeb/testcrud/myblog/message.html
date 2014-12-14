@@ -1,0 +1,10 @@
+<form id="your-profile" action="/adduserView/" method="post"> 
+<table class="form-table">
+{% csrf_token %}
+    <!--{{ form.as_ul }}-->                           
+   <!-- {{ form.as_p }}-->                          
+     <!--{{ form.as_table }}-->
+     {{ form.as_table }}
+</table> 
+<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="提交"  /></p> 
+</form> 

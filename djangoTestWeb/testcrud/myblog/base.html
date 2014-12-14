@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+{% include "top.html" %}
+{% block footer %}5467546{% endblock %}
+    <form action="/search/id355" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+        {% if dict11.username %}
+    {{dict11.username}}.{{dict11.password}}
+    {% for x in list1 reversed%}
+    {{ forloop.revcounter0 }}:{{ x }}
+   {% endfor %}
+    {% else %}
+    dddd
+{% endif %}
+    </form>
+
+    
+</body>
+</html>

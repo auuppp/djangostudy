@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Search</title>
+</head>
+
+<body>
+    <form action="" method="post">
+    {% csrf_token %}
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+{% if warn%}
+     {% for warn in warn %}
+        <li>{{ warn}}</li>
+        {% endfor %}
+{% endif %}
+{% if books %}
+ <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+  <ul>
+        {% for book in books %}
+        <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+    {% if not res%}
+    no res
+    {% endif %}
+
+
+</body>
+</html>

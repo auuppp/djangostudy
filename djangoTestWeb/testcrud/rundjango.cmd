@@ -1,0 +1,2 @@
+set DJANGO_SETTINGS_MODULE=testcrud.settings
+python manage.py runserver

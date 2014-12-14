@@ -1,0 +1,16 @@
+    {% if publisherform.errors %}
+        <p style="color: red;">
+            Please correct the error{{ publisherform.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+<form id="publisherform" action="/savepublisher/" method="post"> 
+<table>
+{% csrf_token %}
+     <input name="id" type="hidden" value="" ><br/>
+
+     {{ publisherform.as_table }}
+
+</table> 
+<p class="submit"><input type="submit" name="publisherform" id="publisherform"value="保存"  /></p> 
+</form> 
