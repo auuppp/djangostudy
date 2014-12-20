@@ -1,0 +1,16 @@
+<form id="publisherform" action="/listpublisher/" method="post"> 
+<table>
+{% csrf_token %}
+     <input name="id" type="hidden" value="{{ publisherByid.id}}"><br/>
+     用户名:<input name="name" type="text" value="{{ publisherByid.name}}"><br/>
+     地址:<input name="address" type="text" value="{{ publisherByid.address}}"><br/>
+     城市:<input name="city" type="text" value="{{ publisherByid.city}}"><br/>
+     省:<input name="state_province" type="text" value="{{ publisherByid.state_province}}"><br/>
+     国家:<input name="country" type="text" value="{{ publisherByid.country}}"><br/>
+     网址:<input name="website" type="text" value="{{ publisherByid.website}}"><br/>
+     日期:<input name="last_accessed" type="text" value="{{ publisherByid.last_accessed}}"><br/>
+
+
+</table> 
+<p class="submit"><input type="submit" name="publisherform" id="publisherform" value="返回"  /></p> 
+</form> 

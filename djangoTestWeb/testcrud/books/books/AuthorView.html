@@ -1,0 +1,27 @@
+11111111
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+<form id="addauthor" action="/AuthorView/" method="post"> 
+<table>
+{% csrf_token %}
+{{form.as_table}}
+<!--
+ {{ authorform.first_name.errors }}
+            <label for="id_subject">first_name:</label>
+            {{ authorform.first_name }}
+             {{ authorform.last_name.errors }}
+            <label for="id_subject">last_name:</label>
+            {{ authorform.last_name }}
+             {{ authorform.email.errors }}
+            <label for="id_subject">email:</label>
+            {{ authorform.email }}
+            -->
+</table> 
+<p class="submit"><input type="submit" name="addauthor" id="addauthor"value="保存"  /></p> 
+</form> 
+{{name}}

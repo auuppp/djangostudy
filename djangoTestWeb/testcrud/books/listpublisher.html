@@ -6,43 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-<a href="/addpublisher">新增</a>
-    <form action="/search_publisher_by_name/" method="post">
+    <form action="/search_publisher_by_name/" method="post" id='form'>
     {% csrf_token %}
         <input type="text" name="name">
         <input type="submit" value="查询">
     </form>
-{% load myfilters %}
 
-<table>
+{% load myfilters %}
+<div class='table'>
+<ul>
 {% csrf_token %}
- <tr>
-                             <td>用户名</td>
-                             <td>地址</td>
-                             <td>城市</td>
-                             <td>省</td>
-                             <td>国家</td>
-                             <td>网址</td>
-                             <td>操作</td>
-                         </tr>
+                             <li class='username'>用户名</li>
+                             <li class='addr'>地址</li>
+                             <li class='city'>城市</li>
+                             <li class='state_province'>省</li>
+                             <li class='country'>国家</li>
+                             <li class='website'>网址</li>
+                             <li class='caozuo'>操作</li>
 
             {% for publisher in publishers %}
-                         <tr>
-                             <td>{{ publisher.name|cut:'0' }}</td>
-                             <td>{{ publisher.address }}</td>
-                             <td>{{ publisher.city }}</td>
-                             <td>{{ publisher.state_province|safe }}</td>
+                             <li class='username'>{{ publisher.name }}</li>
+                             <li class='addr'>{{ publisher.address }}</li>
+                             <li class='city'>{{ publisher.city }}</li>
+                             <li class='state_province'>{{ publisher.state_province|safe }}</li>
                              {% autoescape off %}
-                             <td>{{ publisher.country}}</td>
+                             <li class='country'>{{ publisher.country}}</li>
                              {% endautoescape %}
-                             <td>{{ publisher.website }}</td>
-                             <td><a href="/delpublisher?id={{ publisher.id }}">删除</a>||<a href="/updatepublisher?id={{ publisher.id }}">更新</a></td>
-                         </tr>
+                             <li class='website'>{{ publisher.website }}</li>
+                             <li class='caozuo'><a href="/addpublisher/">新增</a>||<a href="/delpublisher?id={{ publisher.id }}">删除</a>||<a href="/updatepublisher?id={{ publisher.id }}">更新</a>||<a href="/detailpublisher?id={{ publisher.id }}">查看</a></li>
                      {% endfor %}
-
-</table> 
-
-<h1 style="color:red">11111</h1>
+</ul>
+</div>
+<h1>11111</h1>
 <h1>2222222</h1>
 </body>
 </html>

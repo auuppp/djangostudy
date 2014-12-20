@@ -1,4 +1,10 @@
-    {% if publisherform.errors %}
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />  
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<script type="text/javascript" src="/admin/jsi18n/"></script>    
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+{{ publisherform.media }}
+{% if publisherform.errors %}
         <p style="color: red;">
             Please correct the error{{ publisherform.errors|pluralize }} below.
         </p>
@@ -7,8 +13,7 @@
 <form id="publisherform" action="/savepublisher/" method="post"> 
 <table>
 {% csrf_token %}
-     <input name="id" type="hidden" value="" ><br/>
-
+     <input name="id" type="hidden" value="" >
      {{ publisherform.as_table }}
 
 </table> 

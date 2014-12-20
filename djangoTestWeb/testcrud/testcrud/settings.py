@@ -24,7 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
+APPEND_SLASH=False
 
 
 
@@ -104,3 +105,9 @@ TEMPLATE_DIRS = ('D:/testing/python/gyp/djangostudy/djangoTestWeb/testcrud/testc
 'D:/testing/python/gyp/djangostudy/djangoTestWeb/testcrud/books',)
 #staticfiles=(path.join(ROOT_PATH,'static'),)
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+ADMINS = (
+    ('auuppp', '408496353@qq.com'),
+)
+MANAGERS = (
+    ('auuppp', '408496353@qq.com'),
+)

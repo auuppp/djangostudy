@@ -11,6 +11,7 @@ class Publisher(models.Model):
     state_province = models.CharField(max_length=30,verbose_name='省份')
     country = models.CharField(max_length=50,verbose_name='国家')
     website = models.URLField(blank=True,null=True,verbose_name='网址')
+    last_accessed=models.DateField(verbose_name='最后访问日期')
     objects=PublisherManager()
     class Meta:
         app_label = 'books'
@@ -21,6 +22,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
     email = models.EmailField()
+    last_accessed = models.DateTimeField()
     class Meta:
         app_label = 'books'
 

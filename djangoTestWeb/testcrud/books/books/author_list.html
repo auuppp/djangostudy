@@ -1,0 +1,36 @@
+<style>
+*{margin: 0 auto;padding: 0px;list-style: none;}
+.e{width: 600px;border-top: solid #f00 1px;border-left: 1px solid #f00;display: table;margin-top: 10px;}/*定义表格区域大小和边框等参数*/
+li{float: left;}/*一定要记着让LI向左浮动，这样后边的才会自动跟进*/
+.id,.name,.x,.z,.d,.c{color: #999;font-size: 9px;text-align: left;border-right: 1px solid red;border-bottom: 1px solid #f00;height: 22px;line-height: 22px;}/*定义表格表头等*/
+.id{width: 30px;}
+.name{width: 100px;}
+
+.x{width: 100px;}
+
+.z{width: 100px;}
+
+.d{width: 164px;}
+.c{width: 100px;}
+.a{color: red;text-decoration:none;}
+
+</style>
+<a class="a" href="/AuthorCreate">新增</a>
+<div class="e">
+
+<li class="id">ID</li>
+<li class="name">first名字</li>
+<li class="x">last名字</li>
+<li class="z">email</li>
+<li class="d">日期</li>
+<li class="c">操作</li>
+
+{% for author in object_list %}
+            <li class="id">{{ author.id }}</li>
+            <li class="name">{{ author.first_name }}</li>
+            <li class="x">{{ author.last_name }}</li>
+            <li class="z">{{ author.email }}</li>
+            <li class="d">{{ author.last_accessed }}</li>
+            <li class="c"><a href="/AuthorUpdate/{{ author.id }}/">更新</a></li>
+{% endfor %}
+</div>
